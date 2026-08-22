@@ -1,0 +1,8 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd/flux-mirror/main/docs/config-v1beta1.json
+apiVersion: mirror.plugin.fluxcd.io/v1beta1
+kind: Config
+charts:
+  - name: metrics-server
+    source: https://kubernetes-sigs.github.io/metrics-server/
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts

@@ -1,0 +1,15 @@
+---
+name: mirror
+
+on:
+  schedule:
+    - cron: "30 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    uses: bendwyer/github-workflows/.github/workflows/flux-mirror-sync.yml@main
+    with:
+      mirror_version: v0.8.0
+    secrets:
+      ghcr_token: ${{ secrets.GITHUB_TOKEN }}
