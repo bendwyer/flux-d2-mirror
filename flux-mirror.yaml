@@ -3,6 +3,47 @@
 apiVersion: mirror.plugin.fluxcd.io/v1beta1
 kind: Config
 charts:
+  - name: argo-workflows
+    source: https://argoproj.github.io/argo-helm
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: cloudnative-pg
+    source: https://cloudnative-pg.github.io/charts
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: connect
+    source: https://1password.github.io/connect-helm-charts
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: goldilocks
+    source: https://charts.fairwinds.com/stable
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: hcp-terraform-operator
+    source: https://helm.releases.hashicorp.com
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: k8up
+    source: https://k8up-io.github.io/k8up
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: longhorn
+    source: https://charts.longhorn.io
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: metallb
+    source: https://metallb.github.io/metallb
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
   - name: metrics-server
     source: https://kubernetes-sigs.github.io/metrics-server/
     destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: tailscale-operator
+    source: https://pkgs.tailscale.com/helmcharts
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
+  - name: vpa
+    source: https://charts.fairwinds.com/stable
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
