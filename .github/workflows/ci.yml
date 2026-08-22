@@ -14,3 +14,11 @@ jobs:
       dry_run: true
     secrets:
       ghcr_token: ${{ secrets.GITHUB_TOKEN }}
+
+  check:
+    if: always()
+    needs:
+      - validate
+    uses: bendwyer/github-workflows/.github/workflows/github-check.yml@main
+    with:
+      jobs: ${{ toJSON(needs) }}
