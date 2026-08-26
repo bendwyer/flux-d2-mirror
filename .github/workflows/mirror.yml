@@ -5,11 +5,18 @@ on:
   schedule:
     - cron: "30 */6 * * *"
   workflow_dispatch:
+    inputs:
+      overwrite:
+        description: Re-push drifted tags. Run this once, by hand, after confirming upstream republished the same chart content.
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   sync:
     uses: bendwyer/github-workflows/.github/workflows/flux-mirror-sync.yml@main
     with:
       mirror_version: v0.8.0
+      overwrite: ${{ inputs.overwrite || false }}
     secrets:
       ghcr_token: ${{ secrets.GITHUB_TOKEN }}
