@@ -15,6 +15,10 @@ charts:
     source: https://1password.github.io/connect-helm-charts
     destination: oci://ghcr.io/bendwyer/d2-mirror/charts
     limit: 5
+  - name: external-dns
+    source: https://kubernetes-sigs.github.io/external-dns/
+    destination: oci://ghcr.io/bendwyer/d2-mirror/charts
+    limit: 5
   - name: goldilocks
     source: https://charts.fairwinds.com/stable
     destination: oci://ghcr.io/bendwyer/d2-mirror/charts
