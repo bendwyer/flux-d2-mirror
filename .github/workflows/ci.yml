@@ -10,7 +10,7 @@ jobs:
   validate:
     uses: bendwyer/github-workflows/.github/workflows/flux-mirror-sync.yml@main
     with:
-      mirror_version: v0.8.0
+      mirror_version: v0.15.0
       dry_run: true
     secrets:
       ghcr_token: ${{ secrets.GITHUB_TOKEN }}
